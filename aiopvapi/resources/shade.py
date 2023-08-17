@@ -577,7 +577,7 @@ class BaseShadeTilt(BaseShade):
 
     # even for shades that can 180° tilt, this would just result in
     # two closed positions. 90° will always be the open position
-    _open_position_tilt = ShadePosition(tilt=MID_POSITION)
+    _open_position_tilt = ShadePosition(tilt=MAX_POSITION)
     _close_position_tilt = ShadePosition(tilt=MIN_POSITION)
 
     async def tilt_raw(self, position_data):
@@ -694,12 +694,12 @@ class ShadeBottomUpTiltOnClosed90(BaseShadeTilt):
         "Bottom Up Tilt 90°",
     )
 
-    shade_limits = ShadeLimits(tilt_max=MID_POSITION)
+    shade_limits = ShadeLimits(tilt_max=MAX_POSITION)
 
     _open_position = ShadePosition(primary=MAX_POSITION)
     _close_position = ShadePosition(primary=MIN_POSITION)
 
-    _open_position_tilt = ShadePosition(tilt=MID_POSITION)
+    _open_position_tilt = ShadePosition(tilt=MAX_POSITION)
     _close_position_tilt = ShadePosition(tilt=MIN_POSITION)
 
 
@@ -724,10 +724,10 @@ class ShadeBottomUpTiltAnywhere(BaseShadeTilt):
         "Bottom Up Tilt 180°",
     )
 
-    _open_position = ShadePosition(primary=MAX_POSITION, tilt=MID_POSITION)
+    _open_position = ShadePosition(primary=MAX_POSITION, tilt=MAX_POSITION)
     _close_position = ShadePosition(primary=MIN_POSITION, tilt=MIN_POSITION)
 
-    _open_position_tilt = ShadePosition(tilt=MID_POSITION)
+    _open_position_tilt = ShadePosition(tilt=MAX_POSITION)
     _close_position_tilt = ShadePosition(tilt=MIN_POSITION)
 
 
@@ -802,7 +802,7 @@ class ShadeTiltOnly(BaseShadeTilt):
     _open_position = ShadePosition()
     _close_position = ShadePosition()
 
-    _open_position_tilt = ShadePosition(tilt=MID_POSITION)
+    _open_position_tilt = ShadePosition(tilt=MAX_POSITION)
     _close_position_tilt = ShadePosition(tilt=MIN_POSITION)
 
     async def move(self, position_data=None):
@@ -934,12 +934,12 @@ class ShadeDualOverlappedTilt90(BaseShadeTilt):
         "Dual Shade Overlapped Tilt 90°",
     )
 
-    shade_limits = ShadeLimits(tilt_max=MID_POSITION)
+    shade_limits = ShadeLimits(tilt_max=MAX_POSITION)
 
     _open_position = ShadePosition(primary=MAX_POSITION)
     _close_position = ShadePosition(secondary=MIN_POSITION)
 
-    _open_position_tilt = ShadePosition(tilt=MID_POSITION)
+    _open_position_tilt = ShadePosition(tilt=MAX_POSITION)
     _close_position_tilt = ShadePosition(tilt=MIN_POSITION)
 
     def get_additional_positions(self, positions: ShadePosition) -> ShadePosition:
